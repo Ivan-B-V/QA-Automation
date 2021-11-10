@@ -4,7 +4,11 @@ namespace ConsoleAppUniqueSymbols
 {
     static class SymbolsFinder
     {
-
+        /// <summary>
+        /// Returns the size of the max substring of unique symbols.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static int MaxUniqueSubsequenceLength(this string str)
         {
             if (str.Length == 0)
@@ -37,10 +41,15 @@ namespace ConsoleAppUniqueSymbols
                     
                 }
             }
-            //Console.WriteLine(str.Substring(startIndexMax, endIndexMax - startIndexMax + 1));
             return endIndexMax - startIndexMax + 1;
         }
 
+        /// <summary>
+        ///  This method returns nearest from the left the same symbol's index to the symbol with index.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="index"></param>
+        /// <returns> </returns>
         private static int IndexOfNearestSameSymbol(this string str, int index)
         {
             int lastIndex = -1;
