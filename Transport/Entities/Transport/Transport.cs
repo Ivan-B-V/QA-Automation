@@ -1,16 +1,26 @@
-﻿using Task3_Transport.Entities.Powertrains;
-using Task3_Transport.Entities.Engines;
-using Task3_Transport.Entities.Frames;
+﻿using Transport.Entities.Transmissions;
+using Transport.Entities.Engines;
+using Transport.Entities.Chassises;
 
-namespace Task3_Transport.Entities.Transport
+namespace Transport.Entities.Transport
 {
     abstract class Transport
     {
-        public Transmission Transmission { get; protected set; }
-
         public Engine Engine { get; protected set; }
 
-        public Frame Frame { get; protected set; }
+        public Transmission Transmission { get; protected set; }
+
+        public Chassis Chassis { get; protected set; }
+
+        /*public Transport(Engine engine, Chassis chassis, Transmission transmission)
+        {
+            
+        }*/
+
+        public override string ToString()
+        {
+            return $"{Engine}\n{Transmission}\n{Chassis}";
+        }
 
     }
 }

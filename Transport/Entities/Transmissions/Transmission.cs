@@ -1,6 +1,6 @@
-﻿using Task3_Transport.Enums;
+﻿using Transport.Enums;
 
-namespace Task3_Transport.Entities.Powertrains
+namespace Transport.Entities.Transmissions
 {
     abstract class Transmission
     {
@@ -11,5 +11,9 @@ namespace Task3_Transport.Entities.Powertrains
 
         public TransmissionTypes Type { get; protected set; }
 
-    }
+        public override string ToString()
+        {
+            return $"TransmisiionType: {Type}, Gears: {Gears}, Manufacturer: {Manufacturer}";
+        }
+    }   
 }

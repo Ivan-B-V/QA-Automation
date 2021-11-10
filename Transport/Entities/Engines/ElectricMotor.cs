@@ -1,6 +1,6 @@
-﻿using Task3_Transport.Enums;
+﻿using Transport.Enums;
 
-namespace Task3_Transport.Entities.Engines
+namespace Transport.Entities.Engines
 {
     class ElectricMotor : Engine
     {

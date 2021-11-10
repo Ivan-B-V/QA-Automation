@@ -1,5 +1,8 @@
-﻿
-namespace Task3_Transport.Entities.Transport
+﻿using Transport.Entities.Engines;
+using Transport.Entities.Chassises;
+using Transport.Entities.Transmissions;
+
+namespace Transport.Entities.Transport
 {
     class Car : Transport
     {
@@ -7,9 +10,10 @@ namespace Task3_Transport.Entities.Transport
 
         public string PanoramicViewRoof { get; private set; }
 
-        public Car()
+        public Car(Engine engine, CarChassis chassis, Transmission transmission, string manufacturer)
         {
-       
+            
+
 
         }
     }

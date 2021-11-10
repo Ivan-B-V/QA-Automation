@@ -1,5 +1,5 @@
 ﻿
-namespace Task3_Transport.Entities.Transport
+namespace Transport.Entities.Transport
 {
     class Bus : Transport
     {

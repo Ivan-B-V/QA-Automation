@@ -1,15 +1,14 @@
-﻿using Task3_Transport.Enums;
+﻿using Transport.Enums;
 
-namespace Task3_Transport.Entities.Engines
+namespace Transport.Entities.Engines
 {
     class DisielEngine : InternalСombustionEngine
     {
-        public DisielEngine(uint volume, uint power, string serialnumber)
+        public DisielEngine(float volume, uint power, string serialnumber): base(volume)
         {
             Type = EngineType.Disiel;
             Power = power;
             SerialNumber = serialnumber;
-            Volume = volume;
         }
 
         public override string ToString()

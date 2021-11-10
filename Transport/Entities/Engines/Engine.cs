@@ -1,6 +1,6 @@
-﻿using Task3_Transport.Enums;
+﻿using Transport.Enums;
 
-namespace Task3_Transport.Entities.Engines
+namespace Transport.Entities.Engines
 {
 
     abstract class Engine
@@ -14,7 +14,7 @@ namespace Task3_Transport.Entities.Engines
 
         public override string ToString()
         {
-            return $"Engine power: {Power}, EngineType: {Type}, SerialNumber: {SerialNumber}.";
+            return $"EngineType: {Type}, Engine power: {Power}, SerialNumber: {SerialNumber}";
         }
 
     }

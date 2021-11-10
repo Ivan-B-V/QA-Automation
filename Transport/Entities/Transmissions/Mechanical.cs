@@ -1,6 +1,6 @@
-﻿using Task3_Transport.Enums;
+﻿using Transport.Enums;
 
-namespace Task3_Transport.Entities.Powertrains
+namespace Transport.Entities.Transmissions
 {
     class Mechanical : Transmission
     {
@@ -9,6 +9,11 @@ namespace Task3_Transport.Entities.Powertrains
             Gears = gears;
             Manufacturer = manufacturer;
             Type = TransmissionTypes.Mechanical;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

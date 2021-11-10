@@ -1,15 +1,14 @@
 ﻿
-namespace Task3_Transport.Entities.Engines
+namespace Transport.Entities.Engines
 {
     class PetrolEngine : InternalСombustionEngine
     {
 
-        public PetrolEngine(uint volume, uint power, string serialnumber)
+        public PetrolEngine(float volume, uint power, string serialnumber): base(volume)
         {
             Type = Enums.EngineType.Petrol;
             Power = power;
             SerialNumber = serialnumber;
-            Volume = volume;
         }
 
         public override string ToString()

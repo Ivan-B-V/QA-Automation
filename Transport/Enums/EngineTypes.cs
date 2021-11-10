@@ -1,6 +1,6 @@
 ﻿
 
-namespace Task3_Transport.Enums
+namespace Transport.Enums
 {
     public enum EngineType
     {
