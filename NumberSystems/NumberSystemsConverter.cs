@@ -7,26 +7,17 @@ namespace NumberSystems
 {
     class NumberSystemsConverter
     {
-        //any number system
-        // 2 and 20 in const
-        public static string ConvertFromIntTo(int decNumber, int numberSystem)
-        {
+        private const int startNumberSystem = 2;
+        private const int endNumberSystem = 20;
        
+        public static string ConvertFromIntTo(int inputValue, int numberSystem)
+        {
 
-            if (numberSystem < 2 || numberSystem > 20)
+            if (numberSystem < startNumberSystem || numberSystem > endNumberSystem)
             {
-                throw new Exception($"Invalid number system. Should be between {2} and {20}.");
+                throw new Exception($"Invalid number system. Should be between {startNumberSystem} and {endNumberSystem}.");
             }
 
-
-            string outNumber = Converting(decNumber, numberSystem);
-
-            return outNumber;
-        }
-
-        private static string Converting(int inputValue, int numberSystem)
-        {
-           
             StringBuilder binNumberStr = new StringBuilder();
 
             bool isNegative = false;
@@ -43,7 +34,7 @@ namespace NumberSystems
                 {
                     binNumberStr.Insert(0, divRemaider);
                 }
-                else 
+                else
                 {
                     binNumberStr.Insert(0, (char)(55 + divRemaider)); // ACII 65(A)
                 }

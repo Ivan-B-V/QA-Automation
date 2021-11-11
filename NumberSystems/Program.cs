@@ -12,10 +12,8 @@ namespace NumberSystems
                 return;
 
             }
-            
-            //Console.WriteLine(~Convert.ToInt32(args[0]) + 1);
-            Console.WriteLine(NumberSystemsConverter.ConvertFromIntTo(args[0], args[1]));
-            Console.WriteLine((char)65);
+
+            Console.WriteLine(NumberSystemsConverter.ConvertFromIntTo(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
         }
     }
 }
