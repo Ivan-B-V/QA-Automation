@@ -2,6 +2,7 @@
 
 namespace Transport.Entities.Transmissions
 {
+  
     abstract class Transmission
     {
         
