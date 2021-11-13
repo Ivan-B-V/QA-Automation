@@ -2,7 +2,7 @@
 
 namespace Transport.Entities.Transport
 {
-    class Scooter : Transport
+    class Scooter : Vehicle
     {
         public string Manufacturer { get; private set; }
 

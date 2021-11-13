@@ -4,7 +4,7 @@ using Transport.Entities.Chassises;
 
 namespace Transport.Entities.Transport
 {
-    abstract class Transport
+    abstract class Vehicle
     {
         public Engine Engine { get; protected set; }
 

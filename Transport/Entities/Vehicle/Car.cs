@@ -4,7 +4,7 @@ using Transport.Entities.Transmissions;
 
 namespace Transport.Entities.Transport
 {
-    class Car : Transport
+    class Car : Vehicle
     {
         public string Manufacturer { get; private set; }
 

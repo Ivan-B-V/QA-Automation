@@ -1,15 +1,16 @@
 ﻿
 namespace Transport.Entities.Transport
 {
-    class Truck : Transport
+    class Bus : Vehicle
     {
         public string Manufacturer { get; private set; }
 
-        public uint MaxTrailerWeight { get; private set; }
-        
-        public Truck()
+        public uint SeatPostsNumber { get; private set; }
+
+
+        public Bus()
         {
-            
+                       
         }
     }
 }
