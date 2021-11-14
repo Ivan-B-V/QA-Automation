@@ -9,74 +9,74 @@ namespace Aircrafts.Entities
     /// <summary>
     /// Represents the three-dimensional coordinate.
     /// </summary>
-    class Coordinate3D
+    struct Point3D
     {
         /// <summary>
         /// Store for the X property.
         /// </summary>
-        private double x;
+        private uint x;
 
         /// <summary>
         /// Store for the Y property.
         /// </summary>
-        private double y;
+        private uint y;
 
         /// <summary>
         /// Store for the Z property.
         /// </summary>
-        private double z;
+        private uint z;
 
         /// <summary>
         /// X property.
         /// </summary>
-        public double X
+        public uint X
         {
-            get { return x; }
-            set { x = value; }
+            get => x;
+            set => x = value; 
         }
 
         /// <summary>
         /// Y property.
         /// </summary>
-        public double Y
+        public uint Y
         {
-            get { return y; }
-            set { y = value; }
+            get => y;
+            set => y = value;
         }
 
         /// <summary>
         /// Z  property.
         /// </summary>
-        public double Z
+        public uint Z
         {
-            get { return z; }
-            set { z = value; }
+            get => z;
+            set => z = value;
         }
 
         /// <summary>
         /// Initializes a new instance of the Aircrafts.Entities.Coordinate3D. class
         /// </summary>
-        public Coordinate3D(double x, double y, double z)
+        public Point3D(uint x, uint y, uint z)
         {
-            X = x;
-            Y = y;
-            Z = z;
+            this.x = x;
+            this.y = y;
+            this.z = z;
         }
 
         /// <summary>
         /// Calculate distance between two coodninates.
         /// </summary>
-        /// <param name="coordinate">
-        /// The coordinate to which to calculate the distance.
+        /// <param name="point1" name="point2">
+        /// The points between which the distance is calculated.
         /// </param>
         /// <returns>
-        /// Distance between two coodninates.
+        /// Distance between two coodninates in double format.
         /// </returns>
-        public double Distance(Coordinate3D coordinate1, Coordinate3D coordinate2)
+        public double Distance(Point3D point1, Point3D point2)
         {
-            double distance = Math.Sqrt((coordinate1.X - coordinate2.X) * (coordinate1.X - coordinate2.X) +
-                                         (coordinate1.Y - coordinate2.Y) * (coordinate1.Y - coordinate2.Y) +
-                                         (coordinate1.Z - coordinate2.Z) * (coordinate1.Z - coordinate2.Z));
+            double distance = Math.Sqrt((point1.X - point2.X) * (point1.X - point2.X) +
+                                         (point1.Y - point2.Y) * (point1.Y - point2.Y) +
+                                         (point1.Z - point2.Z) * (point1.Z - point2.Z));
             return distance;
         }
     }
