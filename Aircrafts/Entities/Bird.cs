@@ -1,29 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Aircrafts.Interfaces;
+
 namespace Aircrafts.Entities
 {
     class Bird : IFlyable
     {
-        private uint maxSpeed = 20;
-        private uint speed;
-        public uint Speed
+        public Point3D position;
+        private double maxSpeed = 20;
+        private double speed;
+        private double maxAltitude = 7;
+
+        public double Speed
         {
             get => speed;
             protected set => speed = value > maxSpeed ? maxSpeed : value;
-     
         }
 
-        public Point3D Position { get; protected set; }
-
+        public Point3D Position
+        {
+            get => position;
+            protected set 
+            {
+                if (value.Z > maxAltitude)
+                {
+                    position = new Point3D(value.X, value.Y, maxAltitude);
+                }
+            }
+        }
 
         public Bird(Point3D position)
         {
             Position = position;
-
             Speed = (uint)new Random().Next((int)maxSpeed);
         }
 
@@ -32,9 +39,11 @@ namespace Aircrafts.Entities
             Position = point;
         }
 
-        public uint GetFlyTime(Point3D point)
+        public double GetFlyTime(Point3D point)
         {
-            throw new NotImplementedException();
+            double time = Position.Distance(point) / speed;
+
+            return time;
         }
     }
 }
