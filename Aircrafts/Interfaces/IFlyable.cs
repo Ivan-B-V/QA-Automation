@@ -2,8 +2,17 @@
 
 namespace Aircrafts.Interfaces
 {
+    /// <summary>
+    /// Interface for classes capable to flight.
+    /// </summary>
     interface IFlyable
     {
+        /// <summary>
+        /// Set up next point of flight.
+        /// </summary>
+        /// <param name="point">
+        /// Next point of flight.
+        /// </param>
         public void FlyTO(Point3D point);
 
         /// <summary>

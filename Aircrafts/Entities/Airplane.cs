@@ -3,6 +3,9 @@ using System;
 
 namespace Aircrafts.Entities
 {
+    /// <summary>
+    /// Represents intance Airplane.
+    /// </summary>
     class Airplane : IFlyable
     {
         private Point3D position;
@@ -17,12 +20,18 @@ namespace Aircrafts.Entities
        
         private double speed;
 
+        /// <summary>
+        /// Continuous flight speed.
+        /// </summary>
         public double Speed
         {
             get => speed;
             protected set => speed = value > maxSpeed ? maxSpeed : value;
         }
 
+        /// <summary>
+        /// Current position.
+        /// </summary>
         public Point3D Position
         {
             get => position;
@@ -39,6 +48,10 @@ namespace Aircrafts.Entities
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the Aircrafts.Entities.Quadcopter class.
+        /// </summary>
+        /// <param name="position"> Start Airplane position. </param>
         public Airplane(Point3D position)
         {
             Position = position;

@@ -28,7 +28,7 @@ namespace Aircrafts.Entities
         public double X
         {
             get => x;
-            private set => x = value < 0 ? 0 : value; 
+            private set => x = Math.Abs(value); 
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Aircrafts.Entities
         public double Y
         {
             get => y;
-            private set => y = value < 0 ? 0 : value;
+            private set => y = Math.Abs(value);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Aircrafts.Entities
         public double Z
         {
             get => z;
-            private set => z = value < 0 ? 0 : value;
+            private set => z = Math.Abs(value);
         }
 
         /// <summary>
