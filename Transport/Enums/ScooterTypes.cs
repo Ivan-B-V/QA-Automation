@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transport.Enums
 {
-    enum ScooterTypes
+    public enum ScooterTypes
     {
         MaxiScooter,
         Single,

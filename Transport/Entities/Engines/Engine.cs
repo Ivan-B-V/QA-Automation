@@ -3,7 +3,7 @@
 namespace Transport.Entities.Engines
 {
 
-    abstract class Engine
+    public abstract class Engine
     {
 
         public uint Power { get; protected set; }

@@ -1,7 +1,7 @@
 ﻿
 namespace Transport.Entities.Engines
 {
-    class InternalСombustionEngine : Engine
+    public class InternalСombustionEngine : Engine
     {
         public float Volume { get; protected set; }
 

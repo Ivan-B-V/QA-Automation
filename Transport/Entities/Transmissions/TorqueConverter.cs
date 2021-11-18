@@ -2,7 +2,7 @@
 
 namespace Transport.Entities.Transmissions
 {
-    class TorqueConverter : Transmission
+    public class TorqueConverter : Transmission
     {
         public TorqueConverter(int gears, string manufacturer)
         {

@@ -2,8 +2,8 @@
 
 namespace Transport.Entities.Transmissions
 {
-  
-    abstract class Transmission
+
+    public abstract class Transmission
     {
         
         public string Manufacturer { get; protected set; }

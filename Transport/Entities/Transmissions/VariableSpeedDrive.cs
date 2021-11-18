@@ -2,7 +2,7 @@
 
 namespace Transport.Entities.Transmissions
 {
-    class VariableSpeedDrive : Transmission
+    public class VariableSpeedDrive : Transmission
     {
         public VariableSpeedDrive(string manufacturer)
         {

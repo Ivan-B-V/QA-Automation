@@ -1,7 +1,7 @@
 ﻿
 namespace Transport.Entities.Engines
 {
-    class PetrolEngine : InternalСombustionEngine
+    public class PetrolEngine : InternalСombustionEngine
     {
 
         public PetrolEngine(float volume, uint power, string serialnumber): base(volume)

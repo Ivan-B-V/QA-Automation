@@ -7,7 +7,7 @@ namespace Transport.Entities.Vehicle
     /// <summary>
     /// Represents abstraction class Vehicle.
     /// </summary>
-    abstract class Vehicle
+    public abstract class Vehicle
     {
         
         /// <summary>

@@ -2,7 +2,7 @@
 
 namespace Transport.Entities.Transmissions
 {
-    class Mechanical : Transmission
+    public class Mechanical : Transmission
     {
         public Mechanical(int gears, string manufacturer)
         {

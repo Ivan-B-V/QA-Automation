@@ -2,7 +2,7 @@
 
 namespace Transport.Entities.Engines
 {
-    class ElectricMotor : Engine
+    public class ElectricMotor : Engine
     {
         public int WorkingVoltage { get; private set; }
         

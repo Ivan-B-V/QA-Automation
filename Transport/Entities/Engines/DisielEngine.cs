@@ -2,7 +2,7 @@
 
 namespace Transport.Entities.Engines
 {
-    class DisielEngine : InternalСombustionEngine
+    public class DisielEngine : InternalСombustionEngine
     {
         public DisielEngine(float volume, uint power, string serialnumber): base(volume)
         {

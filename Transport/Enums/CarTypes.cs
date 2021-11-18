@@ -1,7 +1,7 @@
 ﻿
 namespace Transport.Enums
 {
-    enum CarTypes
+    public enum CarTypes
     {
         Sedan,
         Minivan,
