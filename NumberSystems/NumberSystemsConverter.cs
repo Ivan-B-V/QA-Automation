@@ -4,7 +4,7 @@ namespace NumberSystems
     /// <summary>
     /// Converts a base data type to another base data type. 
     /// </summary>
-    class NumberSystemsConverter
+    public class NumberSystemsConverter
     {
         private const int startNumberSystem = 2;
         private const int endNumberSystem = 20;
