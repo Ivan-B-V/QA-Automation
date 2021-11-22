@@ -6,13 +6,13 @@ namespace ConsoleAppUniqueSymbols
     {
         static void Main(string[] args)
         {
-            int count = 0;
             if (args.Length != 1)
             {
-                Console.WriteLine("");
+                Console.WriteLine("Invalid args array length.");
                 return;
             }
-            count = args[0].MaxUniqueSubsequenceLength();
+
+            int count = args[0].MaxUniqueSubsequenceLength();
 
             Console.WriteLine($"Max unique symbols length: {count} ");
         }
