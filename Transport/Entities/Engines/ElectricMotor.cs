@@ -4,7 +4,9 @@ namespace Transport.Entities.Engines
 {
     public class ElectricMotor : Engine
     {
-        public int WorkingVoltage { get; private set; }
+        public int WorkingVoltage { get; set; }
+
+        public ElectricMotor() { }
         
         public ElectricMotor(uint power, string serialnumber)
         {

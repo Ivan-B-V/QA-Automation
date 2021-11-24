@@ -2,15 +2,16 @@
 
 namespace Transport.Entities.Engines
 {
-
     public abstract class Engine
     {
 
-        public uint Power { get; protected set; }
+        public uint Power { get;  set; }
 
-        public EngineType Type { get; protected set; }
+        public EngineType Type { get;  set; }
 
-        public string SerialNumber { get; protected set; }
+        public string SerialNumber { get;  set; }
+
+        public Engine() { }
 
         public override string ToString()
         {

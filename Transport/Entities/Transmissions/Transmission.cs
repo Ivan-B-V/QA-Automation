@@ -2,15 +2,16 @@
 
 namespace Transport.Entities.Transmissions
 {
-
     public abstract class Transmission
     {
         
-        public string Manufacturer { get; protected set; }
+        public string Manufacturer { get;  set; }
 
-        public int Gears { get; protected set; }
+        public int Gears { get;  set; }
 
-        public TransmissionTypes Type { get; protected set; }
+        public TransmissionTypes Type { get;  set; }
+
+        public Transmission() { }
 
         public override string ToString()
         {

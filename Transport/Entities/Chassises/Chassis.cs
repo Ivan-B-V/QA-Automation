@@ -3,11 +3,13 @@ namespace Transport.Entities.Chassises
 {
     public class Chassis
     {
-        public uint WheelBase { get; protected set; }
+        public uint WheelBase { get;  set; }
 
-        public uint Payload { get; protected set; }
+        public uint Payload { get; set; }
 
-        public string SerialNumber { get; protected set; }
+        public string SerialNumber { get;  set; }
+
+        public Chassis() { }
 
         public Chassis(uint wheelBase, uint payload, string serialNumber)
         {

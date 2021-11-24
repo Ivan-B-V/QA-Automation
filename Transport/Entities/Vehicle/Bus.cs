@@ -8,7 +8,7 @@ namespace Transport.Entities.Vehicle
     public class Bus : Vehicle
     {     
 
-        public uint SeatPostsNumber { get; private set; }
+        public uint SeatPostsNumber { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the Bus class.
@@ -46,6 +46,8 @@ namespace Transport.Entities.Vehicle
             }
             SeatPostsNumber = seatPostsNumber;
         }
+
+        public Bus() { }
 
         public override string ToString()
         {

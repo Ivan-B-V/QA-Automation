@@ -13,22 +13,22 @@ namespace Transport.Entities.Vehicle
         /// <summary>
         /// Engine property.
         /// </summary>
-        public Engine Engine { get; protected set; }
+        public Engine Engine { get; set; }
 
         /// <summary>
         /// Transmission property.
         /// </summary>
-        public Transmission Transmission { get; protected set; }
+        public Transmission Transmission { get; set; }
 
         /// <summary>
         /// Chassis property.
         /// </summary>
-        public Chassis Chassis { get; protected set; }
+        public Chassis Chassis { get; set; }
 
         /// <summary>
         /// Manufacturer property.
         /// </summary>
-        public string Manufacturer { get; protected set; }
+        public string Manufacturer { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the Vehicle class.
@@ -44,6 +44,8 @@ namespace Transport.Entities.Vehicle
             Transmission = transmission;
             Manufacturer = manufacturer;
         }
+
+        public Vehicle() { }
 
         /// <summary>
         /// Converts the numeric value of this instance to its equivalent string representation.

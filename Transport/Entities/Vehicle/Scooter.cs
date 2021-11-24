@@ -7,7 +7,7 @@ namespace Transport.Entities.Vehicle
 {
     public class Scooter : Vehicle
     {
-        public ScooterTypes ScooterType { get; private set; }
+        public ScooterTypes ScooterType { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the Scooter class.
@@ -52,7 +52,9 @@ namespace Transport.Entities.Vehicle
 
             ScooterType = scooterType;
         }
-        
+
+        public Scooter() { }
+
         public override string ToString()
         {
             return $"Scooter type: {ScooterType}\n{base.ToString()}";
