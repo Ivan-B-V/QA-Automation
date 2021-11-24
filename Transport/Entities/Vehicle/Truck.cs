@@ -8,7 +8,7 @@ namespace Transport.Entities.Vehicle
     public class Truck : Vehicle
     {
 
-        public uint MaxTrailerWeight { get; private set; }
+        public uint MaxTrailerWeight { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the Truck class.
@@ -46,6 +46,8 @@ namespace Transport.Entities.Vehicle
             }
             MaxTrailerWeight = maxTrailerWeight;
         }
+
+        public Truck() { }
 
         public override string ToString()
         {

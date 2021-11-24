@@ -4,6 +4,8 @@ namespace Transport.Entities.Transmissions
 {
     public class TorqueConverter : Transmission
     {
+        public TorqueConverter() { }
+
         public TorqueConverter(int gears, string manufacturer)
         {
             Gears = gears;

@@ -4,6 +4,8 @@ namespace Transport.Entities.Engines
 {
     public class DisielEngine : InternalСombustionEngine
     {
+        public DisielEngine() { } 
+
         public DisielEngine(float volume, uint power, string serialnumber): base(volume)
         {
             Type = EngineType.Disiel;

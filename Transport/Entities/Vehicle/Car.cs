@@ -7,7 +7,7 @@ namespace Transport.Entities.Vehicle
 {
     public class Car : Vehicle
     {
-        public CarTypes CarType { get; private set; }
+        public CarTypes CarType { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the Car class.
@@ -40,6 +40,8 @@ namespace Transport.Entities.Vehicle
             }
             CarType = carType;
         }
+
+        public Car() { }
 
         public override string ToString()
         {

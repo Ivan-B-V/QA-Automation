@@ -4,6 +4,9 @@ namespace Transport.Entities.Transmissions
 {
     public class VariableSpeedDrive : Transmission
     {
+
+        public VariableSpeedDrive() { }
+
         public VariableSpeedDrive(string manufacturer)
         {
             Gears = 1;

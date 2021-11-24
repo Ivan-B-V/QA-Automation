@@ -1,9 +1,11 @@
 ﻿
 namespace Transport.Entities.Engines
 {
-    public class InternalСombustionEngine : Engine
+    public abstract class InternalСombustionEngine : Engine
     {
-        public float Volume { get; protected set; }
+        public float Volume { get; set; }
+
+        public InternalСombustionEngine() { }
 
         public InternalСombustionEngine(float volume)
         {
