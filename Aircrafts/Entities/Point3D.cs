@@ -5,7 +5,7 @@ namespace Aircrafts.Entities
     /// <summary>
     /// Represents the three-dimensional coordinate.
     /// </summary>
-    struct Point3D
+    class Point3D
     {
         /// <summary>
         /// Store for the X property.
@@ -50,13 +50,13 @@ namespace Aircrafts.Entities
         }
 
         /// <summary>
-        /// Initializes a new instance of the Aircrafts.Entities.Coordinate3D. class
+        /// Initializes a new instance of the Aircrafts.Entities.Coordinate3D class. Coordinates X, Y, Z always will be positive.
         /// </summary>
         public Point3D(double x, double y, double z)
         {
-            this.x = x;
-            this.y = y;
-            this.z = z;
+            X = x;
+            Y = y;
+            Z = z;
         }
 
         /// <summary>

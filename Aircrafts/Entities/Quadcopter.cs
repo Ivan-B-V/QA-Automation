@@ -1,25 +1,48 @@
-﻿using System;
-
+﻿
 namespace Aircrafts.Entities
 {
     /// <summary>
-    /// Represents quadcopter instance.
+    /// Represents Quadcopter instance.
     /// </summary>
     class Quadcopter : Drone
     {
         private Point3D position;
 
-        private const double maxAltitude = 11;
+        private double maxAltitude = 11;
 
-        private const double maxSpeed = 120;
+        private double maxSpeed = 120;
 
-        private const double maxFlightTime = 10 /60;
+        private double maxFlightTime = 10 /60;
 
-        private const double maxFlightDist = 1000;
+        private double maxFlightDist = 1000;
         
-        private const double chillTime = 1 / 60;
+        private double chillTime = 1 / 60;
 
         private double speed;
+
+        /// <summary>
+        /// Current position.
+        /// </summary>
+        public Point3D Position
+        {
+            get => position;
+            private set
+            {
+                if (value.Z > maxAltitude)
+                {
+                    position = new Point3D(value.X, value.Y, maxAltitude);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Maximum quadcopter's possible altitude.
+        /// </summary>
+        public double MaxAltitude
+        {
+            get => maxAltitude;
+            private set => maxAltitude = value;
+        }
 
         /// <summary>
         /// Maximum flight distance.
@@ -27,6 +50,7 @@ namespace Aircrafts.Entities
         public double MaxFlightDist
         {
             get => maxFlightDist;
+            private set => maxFlightDist = value;
         }
 
         /// <summary>
@@ -35,6 +59,7 @@ namespace Aircrafts.Entities
         public double MaxSpeed
         {
             get => maxSpeed;
+            private set => maxSpeed = value;
         }
 
         /// <summary>
@@ -43,6 +68,7 @@ namespace Aircrafts.Entities
         public double MaxFlightTime
         {
             get => maxFlightTime;
+            private set => maxFlightTime = value;
         }
 
         /// <summary>
@@ -51,6 +77,7 @@ namespace Aircrafts.Entities
         public double ChillTime
         {
             get => chillTime;
+            private set => chillTime = value;
         }
 
         /// <summary>
@@ -59,57 +86,63 @@ namespace Aircrafts.Entities
         public double Speed
         {
             get => speed;
-            set => speed = Math.Abs(value) > maxSpeed ? maxSpeed : Math.Abs(value);
-        }
-        
-        /// <summary>
-        /// Current position.
-        /// </summary>
-        public Point3D Position
-        {
-            get => position;
-            protected set
-            {
-                if (position.Distance(value) > maxFlightDist)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(value), $"Distance between two points should be less than {maxFlightDist}");
-                }
-                if (value.Z > maxAltitude)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(value), $"Max possible drone's altitude is {maxAltitude}");
-                }
-                position = value;
-            }
+            set => speed = System.Math.Abs(value) > maxSpeed ? maxSpeed : System.Math.Abs(value);
         }
 
         /// <summary>
         /// Initializes a new instance of the Aircrafts.Entities.Quadcopter class.
         /// </summary>
-        /// <param name="pos"> Start Quadcopter position. </param>
-        public Quadcopter(Point3D pos)
+        /// <param name="point"> Start Quadcopter position. </param>
+        public Quadcopter(Point3D point)
         {
-            Position = pos;
-            Speed = new Random().NextDouble() * maxSpeed;
+            FlyTO(point);
+            Speed = new System.Random().NextDouble() * maxSpeed;
         }
 
         public override void FlyTO(Point3D point)
-        {  
+        {
+            if (point is null)
+            {
+                throw new System.ArgumentNullException(nameof(point), "Bird cannot flight to the emptiness.");
+            }
+            if (point.Z > maxAltitude)
+            {
+                throw new System.ArgumentOutOfRangeException(nameof(point), $"Max possible bird's altitude is {maxAltitude}");
+            }
             Position = point;
         }
 
+        /// <summary>
+        /// Calculate flying time between two points.
+        /// </summary>
+        /// <param name="point">
+        /// The point to which the flight time is calculated
+        /// </param>
+        /// <returns>
+        /// Returns the flying time to the point in double format.
+        /// </returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// Throws when point's altitude is more than MaxAltitude or distance between two points more than MaxDistance
+        /// </exception>
+        /// <exception cref="System.ArgumentNullException"> Throws when point is null. </exception>
         public override double GetFlyTime(Point3D point)
         {
+            if (point is null)
+            {
+                throw new System.ArgumentNullException(nameof(point), "Quadcopter cannot flight to the emptiness.");
+            }
+            if (point.Z > maxAltitude)
+            {
+                throw new System.ArgumentOutOfRangeException(nameof(point), $"Max possible quadcopter's altitude is {MaxAltitude}");
+            }
+
             double distance = position.Distance(point);
             
             if (position.Distance(point) > maxFlightDist)
             {
-                throw new ArgumentOutOfRangeException(nameof(point), $"Distance between two points should be less than {maxFlightDist}");
+                throw new System.ArgumentOutOfRangeException(nameof(point), $"Distance between two points should be less than {MaxFlightDist}");
             }
-            if (point.Z > maxAltitude)
-            {
-                throw new ArgumentOutOfRangeException(nameof(point), $"Max possible drone's altitude is {maxAltitude}");
-            }
-
+           
             int chilloutCount = (int)(distance / (MaxFlightTime * speed));
 
             double time = chilloutCount * chillTime;

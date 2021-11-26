@@ -3,7 +3,7 @@
 namespace Aircrafts.Entities
 {
     /// <summary>
-    /// Represents base behavior and properties intance like a Drone.
+    /// Represents base behavior and properties Drone intance.
     /// </summary>
     abstract class Drone : IFlyable
     {
