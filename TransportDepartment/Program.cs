@@ -20,13 +20,12 @@ namespace TransportDepartment
             Department department = new(CreateVehiclesList());
 
             ////Full information about all vehicles which engine volume more than 1.5 L.
-            var first = department.Select(u => new { eng = u.Engine as InternalСombustionEngine, u })
-                                .Where(obj => obj?.eng?.Volume > 1.5)
-                                .Select(obj1 => obj1.u)
+            var first = department.Where(u => u.Engine is InternalСombustionEngine)
+                                .Where(obj => (obj.Engine as InternalСombustionEngine)?.Volume > 1.5)
                                 .ToList();
 
-            //Engine type, engine serial number, engine power of all vehicles.
-            var second = department.Where(obj => obj.GetType() == typeof(Bus) || obj.GetType() == typeof(Truck))
+            //Engine type, engine serial number, engine power of Bus and Trucks vehicles.
+            var second = department.Where(obj => obj is Bus || obj is Truck)
                                  .Select(obj => (EnType: obj.Engine.Type, Serial: obj.Engine.SerialNumber, EnPower: obj.Engine.Power))
                                  .ToList();
 
